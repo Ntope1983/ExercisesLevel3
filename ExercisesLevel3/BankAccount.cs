@@ -29,13 +29,14 @@
             return;
         }
 
-        if (Balance >= amount)
+        if (Balance < amount)
         {
-            Balance -= amount;
+            throw new Issufficientfundexception("Not enough funds to complete this withdrawal.");
         }
-        else
-        {
-            Console.WriteLine("Insufficient funds!");
-        }
+
+        Balance -= amount;
+
+
+
     }
 }
